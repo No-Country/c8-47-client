@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Logo from "../../Assets/Images/Logo.png"
+import Logo from '../Assets/Images/Logo.png';
 import { FaRegWindowClose } from 'react-icons/fa';
 import { FaList } from 'react-icons/fa';
-import {ButtonPurple} from '../../Components/buttons/ButtonPurple';
-import { ButtonGray } from '../../Components/buttons/ButtonGray';
+import { ButtonPurple } from './buttons/ButtonPurple';
+import { ButtonGray } from './buttons/ButtonGray';
 
 export const Nav = () => {
   const Links = [
@@ -17,9 +17,7 @@ export const Nav = () => {
         href={link.link}
         //className='font-Mon text-textColor border-transparent	transition-all duration-500 py-2 px-3 md:px-3 lg:px6 rounded hover:border-textColor focus:bg-btnHoverG focus:border-btnHoverG hover:border border disabled:text-btnDisable'
       >
-         <ButtonGray> 
-          {link.name}
-          </ButtonGray> 
+        <ButtonGray>{link.name}</ButtonGray>
       </a>
     </li>
   ));
@@ -31,15 +29,14 @@ export const Nav = () => {
           className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-textColor'
         >
-         <img src={Logo} alt="Logo" className=' w-40' />
+          <img src={Logo} alt='Logo' className=' w-40' />
         </div>
 
         <div
           onClick={() => setOpen(!open)}
           className={
-           ( open
-              ? 'hidden'
-              : '') + ' text-3xl absolute right-8 top-6 cursor-pointer md:hidden'
+            (open ? 'hidden' : '') +
+            ' text-3xl absolute right-8 top-6 cursor-pointer md:hidden'
           }
         >
           <FaList />
@@ -48,10 +45,8 @@ export const Nav = () => {
         <div
           onClick={() => setOpen(!open)}
           className={
-           ( open
-              ? ''
-              : 'hidden') +
-                ' text-3xl absolute right-8 top-6 cursor-pointer md:hidden'
+            (open ? '' : 'hidden') +
+            ' text-3xl absolute right-8 top-6 cursor-pointer md:hidden'
           }
         >
           <FaRegWindowClose />
@@ -69,4 +64,3 @@ export const Nav = () => {
     </div>
   );
 };
-
